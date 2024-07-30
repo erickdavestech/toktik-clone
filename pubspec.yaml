@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # install Provider: using: flutter pub add provider
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
