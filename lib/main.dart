@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toktik_clone/Ui/Config/app_theme.dart';
+import 'package:toktik_clone/Config/app_theme.dart';
 import 'package:toktik_clone/Ui/Pages/toktik_page.dart';
 
 void main() => runApp(const TokTik());
