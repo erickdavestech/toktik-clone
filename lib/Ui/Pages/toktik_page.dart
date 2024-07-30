@@ -5,6 +5,15 @@ class TokTikPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Text('Hola'));
+    return const Scaffold(
+        body: Center(
+            child: Text(
+      'TokTik Vertical Videos',
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        fontSize: 80,
+        fontWeight: FontWeight.bold,
+      ),
+    )));
   }
 }
