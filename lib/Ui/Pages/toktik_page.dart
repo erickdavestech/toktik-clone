@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:toktik_clone/Providers/provider_videos.dart';
+import 'package:toktik_clone/Ui/Widgets/page_view_videos.dart';
 
 class TokTikPage extends StatelessWidget {
   const TokTikPage({super.key});
@@ -13,8 +14,12 @@ class TokTikPage extends StatelessWidget {
     return Scaffold(
         body: videoProv.initialLoading
             ? const Center(
-                child: CircularProgressIndicator(),
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                ),
               )
-            : const Placeholder());
+            : VideoPageListView(
+                videos: videoProv.videos,
+              ));
   }
 }
