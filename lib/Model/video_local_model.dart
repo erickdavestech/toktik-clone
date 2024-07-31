@@ -1,6 +1,6 @@
+// Model
 import 'package:toktik_clone/Entities/video_post_entitie.dart';
 
-// Model
 class LocalVideoModel {
   final String name;
   final String videoUrl;
@@ -24,6 +24,6 @@ class LocalVideoModel {
       );
 
 // TO LINK video with Entity
-  VideoPost toVideoEntity() =>
-      VideoPost(caption: name, videoUrl: videoUrl, likes: likes, views: views);
+  VideoPostEntity toVideoEntity() => VideoPostEntity(
+      caption: name, videoUrl: videoUrl, likes: likes, views: views);
 }
