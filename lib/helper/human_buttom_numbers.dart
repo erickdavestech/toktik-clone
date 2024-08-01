@@ -1,7 +1,6 @@
 import 'package:intl/intl.dart';
 
 /* Retiramos los digitos decimales y los simbolos
-
 */
 class HumanButtomNumbers {
   static String humanReadbleNumber(double number) {

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:toktik_clone/Data/local_video_map.dart';
 import 'package:toktik_clone/Entities/video_post_entity.dart';
+import 'package:toktik_clone/Ui/Pages/full_screen_video.dart';
 import 'package:toktik_clone/Ui/Widgets/video_buttoms.dart';
 
 class VideoPageListView extends StatelessWidget {
@@ -17,6 +19,12 @@ class VideoPageListView extends StatelessWidget {
           final VideoPostEntity viPost = videos[index];
           // Con Stack posicionamos uno encima del otro
           return Stack(children: [
+            SizedBox.expand(
+              child: FullScreenVideo(
+                videoUrl: viPost.videoUrl,
+                caption: viPost.caption,
+              ),
+            ),
             // Ajustamos posicion
             Positioned(
               bottom: 40,
