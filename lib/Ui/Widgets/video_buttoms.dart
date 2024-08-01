@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toktik_clone/Entities/video_post_entity.dart';
+import 'package:toktik_clone/helper/human_buttom_numbers.dart';
 
 class VideoButtom extends StatelessWidget {
   final VideoPostEntity video;
@@ -38,9 +39,14 @@ class _CustomVideoViewButtom extends StatelessWidget {
       children: [
         IconButton(
           onPressed: () {},
-          icon: Icon(iconData, color: color,size: 40,),
+          icon: Icon(
+            iconData,
+            color: color,
+            size: 40,
+          ),
         ),
-        Text('$value'),
+        // Fomrateamos nuestro buttom
+        Text(HumanButtomNumbers.humanReadbleNumber(value.toDouble())),
       ],
     );
   }
