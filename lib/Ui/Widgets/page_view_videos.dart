@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:toktik_clone/Entities/video_post_entitie.dart';
+import 'package:toktik_clone/Entities/video_post_entity.dart';
+import 'package:toktik_clone/Ui/Widgets/video_buttoms.dart';
 
 class VideoPageListView extends StatelessWidget {
   final List<VideoPostEntity> videos;
@@ -7,16 +8,23 @@ class VideoPageListView extends StatelessWidget {
 
   @override
   Widget build(Object context) {
-    return PageView(
-      scrollDirection: Axis.vertical,
-      physics: const BouncingScrollPhysics(),
-      children: [
-        Container(color: Colors.red),
-        Container(color: Colors.blue),
-        Container(color: const Color.fromARGB(255, 17, 74, 131)),
-        Container(color: const Color.fromARGB(255, 87, 119, 145)),
-        Container(color: const Color.fromARGB(255, 54, 122, 177)),
-      ],
-    );
+    // Utilizaremos .builder para construir los elementos de menare perezo y eficiente
+    return PageView.builder(
+        scrollDirection: Axis.vertical,
+        physics: const BouncingScrollPhysics(),
+        itemCount: videos.length, // Tomamos el total
+        itemBuilder: (context, index) {
+          final VideoPostEntity viPost = videos[index];
+          // Con Stack posicionamos uno encima del otro
+          return Stack(children: [
+            // Ajustamos posicion
+            Positioned(
+              bottom: 40,
+              right: 20,
+              // llamamos buttom
+              child: VideoButtom(video: viPost),
+            )
+          ]);
+        });
   }
 }
