@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:toktik_clone/Data/local_video_map.dart';
 import 'package:toktik_clone/Entities/video_post_entity.dart';
 import 'package:toktik_clone/Ui/Pages/full_screen_video.dart';
 import 'package:toktik_clone/Ui/Widgets/video_buttoms.dart';
