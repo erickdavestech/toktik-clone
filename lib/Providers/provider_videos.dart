@@ -6,13 +6,12 @@ import 'package:toktik_clone/Model/video_local_model.dart';
 
 class VideoProvider extends ChangeNotifier {
   bool initialLoading = true;
-
   List<VideoPostEntity> videos = [];
   Future<void> loadNextPage() async {
-    await Future.delayed(const Duration(seconds: 2));
+    // await Future.delayed(const Duration(seconds: 2));
 
     final List<VideoPostEntity> newVideos = videoPostsdata
-        .map((videos) => LocalVideoModel.fromJsonMap(videos).toVideoEntity())
+        .map((video) => LocalVideoModel.fromJsonMap(video).toVideoEntity())
         .toList();
 
     videos.addAll(newVideos);

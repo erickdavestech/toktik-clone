@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-// Transformamos de StatelesWidget a StatefullWidget
 class FullScreenVideo extends StatefulWidget {
   final String videoUrl;
   final String caption;
@@ -36,10 +35,20 @@ class _FullScreenVideoState extends State<FullScreenVideo> {
     return FutureBuilder(
         future: controller.initialize(),
         builder: (context, snapshot) {
-          return const Center(
-              child: CircularProgressIndicator(
-            strokeAlign: 2,
-          ));
+          if (snapshot.connectionState != ConnectionState.done) {
+            return const Center(
+                child: CircularProgressIndicator(
+              strokeAlign: 2,
+            ));
+          }
+          return AspectRatio(
+            aspectRatio: controller.value.aspectRatio,
+            child: Stack(
+              children: [
+                VideoPlayer(controller),
+              ],
+            ),
+          );
         });
   }
 }

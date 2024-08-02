@@ -8,7 +8,6 @@ class TokTikPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //
     final videoProv = context.watch<VideoProvider>();
 
     return Scaffold(

@@ -15,7 +15,7 @@ class TokTik extends StatelessWidget {
     return MultiProvider(
         providers: [
           ChangeNotifierProvider(
-              create: (_) => VideoProvider()..loadNextPage()),
+              lazy: false, create: (_) => VideoProvider()..loadNextPage()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
